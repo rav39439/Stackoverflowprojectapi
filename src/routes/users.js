@@ -131,7 +131,7 @@ let jsondata=JSON.stringify(req.body)
 console.log(jsondata)
 var mailOptions={
   from:"rav39439@gmail.com",
-  to:"rav39439@gmail.com",
+  to:"info@redpositive.im",
   subject:"Your data",
   html:`<h2>Data of required employees</h2>
   <h4>Data as required</h4>
