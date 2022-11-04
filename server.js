@@ -39,7 +39,7 @@ app.use(cors(), function(req, res, next) {
 
   app.use("/api/users", userRoute);
 
-  server.listen(8800,function(){
+  server.listen(process.env.PORT||8800,function(){
     console.log("connected")
   
   })
