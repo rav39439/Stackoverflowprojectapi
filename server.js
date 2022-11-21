@@ -12,11 +12,16 @@ require('dotenv').config()
 
 
 const cors=require('cors')
-const io = require('socket.io')(server, {cors: {origin: "*",
-allowedHeaders: ["my-custom-header"],
-credentials: true
-}});
-
+// const io = require('socket.io')(server, {cors: {origin: "*",
+// allowedHeaders: ["my-custom-header"],
+// credentials: true
+// }});
+var io=require("socket.io")(server, {
+  cors: {
+    origin:"https://stackoverflowfrontend.netlify.app",
+    credentials: true
+  }
+})
 
 
 mongoose.connect(process.env.MONGO_KEY,{useNewUrlParser:true , useUnifiedTopology:true}).then( ()=>
@@ -48,7 +53,7 @@ const conn = mongoose.createConnection(process.env.MONGO_KEY,{ useNewUrlParser: 
 //   });
   
 app.use(cors(), function(req, res, next) {
-  res.header("Access-Control-Allow-Origin","http://localhost:3000"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin","https://stackoverflowfrontend.netlify.app"); // update to match the domain you will make the request from
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
