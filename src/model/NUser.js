@@ -6,6 +6,7 @@ const ClientSchema=new mongoose.Schema({
     email:{type:String,required:true},
     password:{type:String,required:true},
     about:{type:String},
+    phoneno:{type:String},
     tags:{type:String},
     joinedOn:{type:Date,default:Date.now},
     messages:{type:Array}
